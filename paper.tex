@@ -1,0 +1,91 @@
+% Paper template
+\documentclass[12pt,a4paper]{article}
+
+%%% External packages
+\usepackage{amsmath,amssymb,amsfonts,bm,graphicx,subfiles,xspace}
+
+%%% Document settings
+
+% define page size
+\setlength{\textheight}{235mm}
+\setlength{\topmargin}{6mm}
+\setlength{\headheight}{0mm}
+\setlength{\headsep}{0mm}
+\setlength{\footskip}{15mm}
+\setlength{\textwidth}{163mm}
+\setlength{\oddsidemargin}{1mm}
+\setlength{\evensidemargin}{1mm}
+
+% width of abstract
+\newlength{\abstwidth}
+\setlength{\abstwidth}{\textwidth}
+\addtolength{\abstwidth}{-25mm}
+
+% allow figure and text to better coexist on same page
+\renewcommand{\floatpagefraction}{0.8}
+
+
+%%% Begin document
+
+\begin{document}
+% set sloppy attitude to line breaks
+\sloppy
+ 
+\pagestyle{empty}
+ 
+\begin{flushright}
+LU TP 21-xx\\
+MCnet-21-xx\\
+\end{flushright}
+
+\vspace{\fill}
+
+\begin{center}
+{\Huge\bf Title of paper}\\[4mm]
+{\Huge\bf which can be continued}\\[10mm]
+{\Large Author Lastname, Second Author} \\[3mm]
+{\it Theoretical Particle Physics,}\\[1mm]
+{\it Department of Astronomy and Theoretical Physics,}\\[1mm]
+{\it Lund University,}\\[1mm]
+{\it S\"olvegatan 14A,}\\[1mm]
+{\it SE-223 62 Lund, Sweden}
+\end{center}
+
+\vspace{\fill}
+
+\begin{center}
+\begin{minipage}{\abstwidth}
+{\bf Abstract}\\[2mm]
+Here goes the abstract
+\end{minipage}
+\end{center}
+
+\vspace{\fill}
+
+\phantom{dummy}
+
+\clearpage
+
+\pagestyle{plain}
+\setcounter{page}{1}
+
+% Here you can either write the manuscipt directly,
+% or include chapters with the \subfile command.
+
+\subfile{first-file.tex}
+
+%...
+
+\cite{Bierlich:2020naj}
+\section*{Acknowledgements}
+
+Work supported in part by...
+
+% Appendices goes after acknowledgements, but before bibliography.
+
+\subfile{appendix.tex}
+
+\bibliographystyle{utphys}
+\bibliography{bibliography}
+
+\end{document}
