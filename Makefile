@@ -2,14 +2,14 @@
 
 # Compile the paper.
 all :
-	pdflatex paper.tex
+	pdflatex main.tex
 
 # Compile paper and bibliography.
 bib : bibliography.bib
-	pdflatex paper.tex
-	bibtex paper
-	pdflatex paper.tex
-	pdflatex paper.tex
+	pdflatex main.tex
+	bibtex main
+	pdflatex main.tex
+	pdflatex main.tex
 
 # CI test for fetching bibliography
 test-bib : 
@@ -17,11 +17,11 @@ test-bib :
 	then \
 		cp bibliography.bib old-bibliography.bib ; \
 	fi;
-	pdflatex paper.tex
+	pdflatex main.tex
 	python3 citations.py --noempty
-	bibtex paper
-	pdflatex paper.tex
-	pdflatex paper.tex
+	bibtex main
+	pdflatex main.tex
+	pdflatex main.tex
 	
 
 # Fetch bibliography from inspire.
@@ -35,4 +35,4 @@ bibliography.bib : paper.aux
 paper.aux : all
 
 clean :
-	rm -f *.idx *.ilg *.ind *.aux *.toc *.log *.bbl *.blg *.out paper.pdf 
+	rm -f *.idx *.ilg *.ind *.aux *.toc *.log *.bbl *.blg *.out main.pdf 
