@@ -25,14 +25,14 @@ test-bib :
 	
 
 # Fetch bibliography from inspire.
-bibliography.bib : paper.aux
+bibliography.bib : main.aux
 	if [ -a bibliography.bib ] ; \
 	then \
 		cp bibliography.bib old-bibliography.bib ; \
 	fi;
-	python3 citations.py
+	python3 citations.py --auxfile=main.aux
 
-paper.aux : all
+main.aux : all
 
 clean :
 	rm -f *.idx *.ilg *.ind *.aux *.toc *.log *.bbl *.blg *.out main.pdf 
